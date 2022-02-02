@@ -66,10 +66,9 @@ WHERE p.Name LIKE 'S%'
 
 --11) Write a query that retrieves the columns Name and ListPrice from the Production.Product table. Your result set should look something like the following. Order the result set by the Name column.
 
-SELECT p.Name, p.ListPrice
+SELECT TOP 6 p.Name, p.ListPrice
 FROM Production.Product AS p
-WHERE p.Name LIKE 'Seat%'
-	OR p.Name LIKE 'Short-Sleeve Classic Jersey, [L-M]'
+WHERE p.Name LIKE 'S%'
 ORDER BY p.Name
 
 --12) Write a query that retrieves the columns Name and ListPrice from the Production.Product table. Your result set should look something like the following. Order the result set by the Name column. The products name should start with either 'A' or 'S'
