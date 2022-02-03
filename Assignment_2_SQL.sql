@@ -30,7 +30,7 @@ SELECT SUM(i.Quantity)
 FROM Production.ProductInventory i
 
 --6.  Write a query to list the sum of products in the Production.ProductInventory table and LocationID set to 40 and limit the result to include just summarized quantities less than 100.
-	--**/This one is a little be vague, especially "the sum of products". One productID will only Have one locationid = 40. So the quantity will be one number. Not sure where should I use sum.
+	--**/This one is a little bit vague, especially "the sum of products". One productID will only Have one locationid = 40. So the quantity will be one number. Not sure where should I use sum.
 SELECT i.ProductID, i.Quantity AS TheSum
 FROM Production.ProductInventory i
 WHERE i.LocationID = 40 AND i.Quantity < 100
@@ -176,7 +176,7 @@ GROUP BY b.FirstName, b.LastName
 HAVING COUNT(a.EmployeeID) > 2
 
 --27. Display the customers and suppliers by city. The results should have the following columns:
-	--**Not sure about the difference between name and contactname, so I only choose one to retrieve.
+	--**Not sure about the difference between name and contactname, so I only choose one.
 
 SELECT c.City, c.ContactName, 'Customers' AS [Type]
 FROM Customers c
