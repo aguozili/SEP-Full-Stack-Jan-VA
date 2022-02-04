@@ -74,24 +74,26 @@ FROM Customers c JOIN Orders o ON c.CustomerID = o.CustomerID
 WHERE o.ShipCity != c.city
 
 --8. List 5 most popular products, their average price, and the customer city that ordered most quantity of it.
- --Get a bit confused about average price. I assume that is the unit price.
 
-WITH t1
-AS(
-SELECT p.ProductID, c.city, RANK() OVER(PARTITION BY p.ProductID ORDER BY SUM(od.Quantity) DESC) RNK
+SELECT A.ProductID, B.TheAVG, A.City
+FROM(
+SELECT dt.productID, dt.city
+FROM(
+SELECT od.ProductID, c.city, RANK() OVER(PARTITION BY od.ProductID ORDER BY SUM(od.Quantity) DESC) RNK
 FROM Products p JOIN [Order Details] od ON p.ProductID = od.ProductID JOIN Orders o ON od.OrderID = o.OrderID JOIN Customers c ON o.CustomerID = c.CustomerID
-WHERE p.ProductID IN 
-	(SELECT dt.ProductID
-	FROM (
-		SELECT TOP 5 p.ProductID, RANK() OVER(ORDER BY SUM(od.Quantity) DESC) RNK
-		FROM Products p JOIN [Order Details] od ON p.ProductID = od.ProductID
-		GROUP BY p.ProductID) dt
-		WHERE dt.RNK <= 5)
-	GROUP BY p.ProductID, c.City
-	)
-SELECT p.ProductName, p.UnitPrice AS avgprice, t.city
-FROM Products p JOIN t1 t ON p.ProductID = t.ProductID
-WHERE t.RNK = 1
+GROUP BY od.ProductID, c.City) dt 
+WHERE dt.RNK = 1 AND dt.ProductID IN (SELECT TOP 5 p.ProductID
+FROM Products p JOIN [Order Details] od ON p.ProductID = od.ProductID JOIN Orders o ON od.OrderID = o.OrderID JOIN Customers c ON o.CustomerID = c.CustomerID
+GROUP BY p.ProductID
+ORDER BY SUM(od.Quantity) DESC)) A JOIN
+(
+SELECT od.ProductID , ROUND(SUM(od.UnitPrice * od.Quantity * (1-od.Discount))/SUM(od.Quantity), 2) TheAVG
+FROM [Order Details] od
+WHERE od.ProductID IN (SELECT TOP 5 p.ProductID
+FROM Products p JOIN [Order Details] od ON p.ProductID = od.ProductID JOIN Orders o ON od.OrderID = o.OrderID JOIN Customers c ON o.CustomerID = c.CustomerID
+GROUP BY p.ProductID
+ORDER BY SUM(od.Quantity) DESC)
+GROUP BY od.ProductID) B ON A.ProductID = B.ProductID
 
 
 
