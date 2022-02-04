@@ -1,7 +1,7 @@
 USE Northwind
 GO
 
---1.      List all cities that have both Employees and Customers.
+--1. List all cities that have both Employees and Customers.
 
 SELECT DISTINCT c.City
 FROM Customers c
@@ -10,13 +10,13 @@ SELECT DISTINCT e.City
 FROM Employees e
 GROUP BY City
 
---2.      List all cities that have Customers but no Employee.
- --a.      Use sub-query
+--2. List all cities that have Customers but no Employee.
+ --a. Use sub-query
 SELECT DISTINCT c.City
 FROM Customers c
 WHERE c.City NOT IN(SELECT DISTINCT e.City FROM Employees e)
 
- --b.      Do not use sub-query
+ --b. Do not use sub-query
 
 SELECT DISTINCT c.City
 FROM Customers c
@@ -25,21 +25,21 @@ SELECT DISTINCT e.City
 FROM Employees e
 GROUP BY City
 
---3.      List all products and their total order quantities throughout all orders.
+--3. List all products and their total order quantities throughout all orders.
 
 SELECT p.ProductName, SUM(od.Quantity)
 FROM Products p JOIN [Order Details] od ON p.ProductID = od.ProductID JOIN Orders o ON od.OrderID = o.OrderID
 GROUP BY p.ProductName
 
---4.      List all Customer Cities and total products ordered by that city.
+--4. List all Customer Cities and total products ordered by that city.
 
 SELECT c.City, SUM(od.Quantity)
 FROM Products p JOIN [Order Details] od ON p.ProductID = od.ProductID JOIN Orders o ON od.OrderID = o.OrderID JOIN Customers c ON o.CustomerID = c.CustomerID
 GROUP BY c.City
 
 
---5.      List all Customer Cities that have at least two customers.
- --a.      Use union
+--5. List all Customer Cities that have at least two customers.
+ --a. Use union
 
 SELECT c.city
 FROM Customers c
@@ -49,7 +49,7 @@ INTERSECT
 SELECT DISTINCT b.City
 FROM Customers b
 
- --b.      Use sub-query and no union
+ --b. Use sub-query and no union
 
 SELECT dt.city
 FROM
@@ -57,7 +57,7 @@ FROM
 	GROUP BY c.City
 	HAVING COUNT(c.city) >= 2) dt
 
---6.      List all Customer Cities that have ordered at least two different kinds of products.
+--6. List all Customer Cities that have ordered at least two different kinds of products.
 
 SELECT dt.city
 FROM (
@@ -67,13 +67,13 @@ FROM (
 	HAVING COUNT(dt.pname) >= 2
 
 
---7.      List all Customers who have ordered products, but have the ‘ship city’ on the order different from their own customer cities.
+--7. List all Customers who have ordered products, but have the ‘ship city’ on the order different from their own customer cities.
 
 SELECT DISTINCT c.ContactName
 FROM Customers c JOIN Orders o ON c.CustomerID = o.CustomerID
 WHERE o.ShipCity != c.city
 
---8.      List 5 most popular products, their average price, and the customer city that ordered most quantity of it.
+--8. List 5 most popular products, their average price, and the customer city that ordered most quantity of it.
  --Get a bit confused about average price. I assume that is the unit price.
 
 WITH t1
