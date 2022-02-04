@@ -127,4 +127,7 @@ GROUP BY c.city) dt
 
 --11. How do you remove the duplicates record of a table?
 
---Using distinct can remove the duplicates record. Union removes the repeated records too.
+/**
+The first way is using Group by to identify the duplicate row. We can use the Count function to check the ocurrence of a row.
+Rank is also another way to check repeated rows in a table. The rows with the same rank can be easily identified as duplicates.
+**/
