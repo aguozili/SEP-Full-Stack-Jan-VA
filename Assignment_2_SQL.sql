@@ -28,25 +28,38 @@ WHERE p.ProductSubcategoryID IS NULL
 
 SELECT SUM(i.Quantity)
 FROM Production.ProductInventory i
+GROUP BY i.ProductID
+
+
+SELECT *
+FROM Production.ProductInventory i
 
 --6.  Write a query to list the sum of products in the Production.ProductInventory table and LocationID set to 40 and limit the result to include just summarized quantities less than 100.
 	--**/This one is a little bit vague, especially "the sum of products". One productID will only Have one locationid = 40. So the quantity will be one number. Not sure where should I use sum.
-SELECT i.ProductID, i.Quantity AS TheSum
+
+SELECT i.ProductID, SUM(i.Quantity) AS TheSum
 FROM Production.ProductInventory i
-WHERE i.LocationID = 40 AND i.Quantity < 100
+WHERE i.LocationID = 40
+GROUP BY i.ProductID
+HAVING SUM(i.Quantity) < 100
 
 --7. Write a query to list the sum of products with the shelf information in the Production.ProductInventory table and LocationID set to 40 and limit the result to include just summarized quantities less than 100
 	--**/Same Problem here with question 6.
 
-SELECT i.Shelf, i.ProductID, i.Quantity AS TheSum
+SELECT i.ProductID, i.Shelf, SUM(i.Quantity) AS TheSum
 FROM Production.ProductInventory i
-WHERE i.LocationID = 40 AND i.Quantity < 100
+WHERE i.LocationID = 40
+GROUP BY i.ProductID, i.Shelf
+HAVING SUM(i.Quantity) < 100
+
+
 
 --8. Write the query to list the average quantity for products where column LocationID has the value of 10 from the table Production.ProductInventory table.
 
-SELECT AVG(i.Quantity) TheAvg
+SELECT i.ProductID, AVG(i.Quantity) TheAvg
 FROM Production.ProductInventory i
 WHERE i.LocationID = 10
+GROUP BY i.ProductID
 
 --9. Write query  to see the average quantity  of  products by shelf  from the table Production.ProductInventory
 
@@ -86,13 +99,29 @@ GO
 
 --14. List all Products that has been sold at least once in last 25 years.
 
-SELECT p.ProductName
+SELECT DISTINCT p.ProductID, p.ProductName
 FROM Orders o JOIN [Order Details] od ON o.OrderID = od.OrderID JOIN Products p on od.ProductID = p.ProductID
-WHERE o.OrderDate > DATEADD(year, -25, '2022/2/2')
+WHERE o.OrderDate >= DATEADD(year, -25, GETDATE())
+ORDER BY p.ProductID
+
+SELECT p.ProductID, p.ProductName, o.OrderDate
+FROM Orders o JOIN [Order Details] od ON o.OrderID = od.OrderID JOIN Products p on od.ProductID = p.ProductID
+WHERE p.ProductID = 15
+
+SELECT DISTINCT p.ProductID, p.ProductName
+	FROM Orders o
+	JOIN
+	[Order Details] od
+	ON o.OrderID =  od.OrderID
+	JOIN 
+	Products p
+	ON od.ProductID = p.ProductID
+	WHERE DATEDIFF(year, o.OrderDate, GETDATE())< 25;
+
 
 --15. List top 5 locations (Zip Code) where the products sold most.
 
-SELECT TOP 5 o.ShipPostalCode
+SELECT TOP 5 o.ShipPostalCode, SUM(od.Quantity) Qty
 FROM Orders	o JOIN [Order Details] od ON o.OrderID = od.OrderID
 WHERE o.ShipPostalCode IS NOT NULL
 GROUP BY o.ShipPostalCode
@@ -100,15 +129,15 @@ ORDER BY SUM(od.Quantity) DESC
 
 --16. List top 5 locations (Zip Code) where the products sold most in last 25 years.
 
-SELECT TOP 5 o.ShipPostalCode
+SELECT TOP 5 o.ShipPostalCode, SUM(od.Quantity)
 FROM Orders	o JOIN [Order Details] od ON o.OrderID = od.OrderID
-WHERE o.ShipPostalCode IS NOT NULL AND o.OrderDate > DATEADD(year, -25, '2022/2/2')
+WHERE o.ShipPostalCode IS NOT NULL AND DATEDIFF(year, o.OrderDate, GETDATE())< 25
 GROUP BY o.ShipPostalCode
 ORDER BY SUM(od.Quantity) DESC
 
 --17. List all city names and number of customers in that city.
 
-SELECT c.City, COUNT(c.CustomerID)
+SELECT c.City, COUNT(c.CustomerID) NumOfCustomer
 FROM Customers c
 GROUP BY c.City
 
@@ -117,7 +146,7 @@ GROUP BY c.City
 SELECT c.City, COUNT(c.CustomerID) Total
 FROM Customers c
 GROUP BY c.City
-HAVING COUNT(c.CustomerID) >= 2
+HAVING COUNT(c.CustomerID) > 2
 
 --19. List the names of customers who placed orders after 1/1/98 with order date.
 
@@ -128,21 +157,22 @@ WHERE o.OrderDate > '1998/1/1'
 --20. List the names of all customers with most recent order dates
 
 SELECT c.ContactName, MAX(o.OrderDate) [Most recent date]
-FROM Customers c JOIN Orders o ON c.CustomerID = o.CustomerID
+FROM Customers c LEFT JOIN Orders o ON c.CustomerID = o.CustomerID
 GROUP BY c.ContactName
 
 --21.  Display the names of all customers  along with the  count of products they bought
 
 SELECT c.CustomerID, COUNT(od.ProductID) [Count of product]
-FROM Customers c JOIN Orders o ON c.CustomerID = o.CustomerID JOIN [Order Details] od ON o.OrderID = od.OrderID
+FROM Customers c LEFT JOIN Orders o ON c.CustomerID = o.CustomerID LEFT JOIN [Order Details] od ON o.OrderID = od.OrderID
 GROUP BY c.CustomerID
+ORDER BY [Count of product]
 
 --22. Display the customer ids who bought more than 100 Products with count of products.
 
-SELECT c.CustomerID, COUNT(od.ProductID) [Count of product]
+SELECT c.CustomerID, SUM(od.Quantity) [Count of product]
 FROM Customers c JOIN Orders o ON c.CustomerID = o.CustomerID JOIN [Order Details] od ON o.OrderID = od.OrderID
 GROUP BY c.CustomerID
-HAVING COUNT(od.ProductID) > 100
+HAVING SUM(od.Quantity) > 100
 
 --23. List all of the possible ways that suppliers can ship their products. Display the results as below
 
@@ -152,8 +182,9 @@ ORDER BY s.CompanyName
 
 --24. Display the products order each day. Show Order date and Product Name.
 
-SELECT o.OrderDate, p.ProductName
-FROM Orders o JOIN [Order Details] od ON o.OrderID = od.OrderID JOIN Products p ON od.ProductID = p.ProductID
+SELECT DISTINCT o.OrderDate, p.ProductName
+FROM Orders o LEFT JOIN [Order Details] od ON o.OrderID = od.OrderID JOIN Products p ON od.ProductID = p.ProductID
+ORDER BY o.OrderDate, p.ProductName
 
 --25. Displays pairs of employees who have the same job title.
 
