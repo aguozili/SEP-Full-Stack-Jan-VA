@@ -10,6 +10,12 @@ SELECT DISTINCT e.City
 FROM Employees e
 GROUP BY City
 
+
+SELECT DISTINCT c.city 
+FROM Customers c
+WHERE c.city IN (SELECT City FROM Employees)
+
+
 --2. List all cities that have Customers but no Employee.
  --a. Use sub-query
 SELECT DISTINCT c.City
@@ -27,9 +33,11 @@ GROUP BY City
 
 --3. List all products and their total order quantities throughout all orders.
 
-SELECT p.ProductName, SUM(od.Quantity)
-FROM Products p JOIN [Order Details] od ON p.ProductID = od.ProductID JOIN Orders o ON od.OrderID = o.OrderID
-GROUP BY p.ProductName
+SELECT od.ProductID, SUM(od.Quantity) Qty
+FROM [Order Details] od
+GROUP BY od.ProductID
+
+
 
 --4. List all Customer Cities and total products ordered by that city.
 
@@ -51,11 +59,9 @@ FROM Customers b
 
  --b. Use sub-query and no union
 
-SELECT dt.city
-FROM
-	(SELECT c.city FROM Customers c
+SELECT c.city FROM Customers c
 	GROUP BY c.City
-	HAVING COUNT(c.city) >= 2) dt
+	HAVING COUNT(c.city) >= 2
 
 --6. List all Customer Cities that have ordered at least two different kinds of products.
 
@@ -69,7 +75,7 @@ FROM (
 
 --7. List all Customers who have ordered products, but have the ‘ship city’ on the order different from their own customer cities.
 
-SELECT DISTINCT c.ContactName
+SELECT DISTINCT c.ContactName, c.CustomerID
 FROM Customers c JOIN Orders o ON c.CustomerID = o.CustomerID
 WHERE o.ShipCity != c.city
 
@@ -95,6 +101,15 @@ GROUP BY p.ProductID
 ORDER BY SUM(od.Quantity) DESC)
 GROUP BY od.ProductID) B ON A.ProductID = B.ProductID
 
+
+--****
+select top 5 ProductID,AVG(UnitPrice) as AvgPrice,(select top 1 City from Customers c join Orders o on o.CustomerID=c.CustomerID join [Order Details] od2 on od2.OrderID=o.OrderID where od2.ProductID=od1.ProductID group by city order by SUM(Quantity) desc) as City
+from [Order Details] od1
+group by ProductID 
+order by sum(Quantity) desc
+
+
+--****
 
 
 --9. List all cities that have never ordered something but we have employees there.
