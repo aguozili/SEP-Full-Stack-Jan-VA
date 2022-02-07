@@ -96,10 +96,24 @@ DROP TABLE city_Shih
 DROP VIEW Packers_hshih
 
 
-
-
 --5. Create a stored procedure “sp_birthday_employees_[you_last_name]” that creates a new table “birthday_employees_your_last_name” and fill it with all employees that have a birthday on Feb. (Make a screen shot) drop the table. Employee table should not be affected.
 
+CREATE PROC sp_birthday_employees_Shih
+AS
+BEGIN
+SELECT e.FirstName + ' ' + e.LastName [employee] INTO birthday_employees_your_Shih
+FROM Employees e
+WHERE MONTH(e.BirthDate) = 2
+END
+
+EXEC sp_birthday_employees_Shih
 
 
 --6. How do you make sure two tables have the same data?
+--Base on what I learned these days, Union can be use to check whether two table have the same data.
+
+--SELECT * FROM Table1
+--UNION
+--SELECT * FROM Table2
+
+--When the record is larger than the original table, it means that they don't have the same table.
