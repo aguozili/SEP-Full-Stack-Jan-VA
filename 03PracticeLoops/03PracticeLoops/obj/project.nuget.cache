@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "62IN4YMFLam9PltOE+JmNHQh2OfOCvXTE03+YUKsCyphZ2b/EFG6AzqIlYSdMzzfLoenn48n7HHY5COerIM/Mg==",
+  "success": true,
+  "projectFilePath": "C:\\FullStack\\SEP-Full-Stack-Jan-VA\\03PracticeLoops\\03PracticeLoops\\03PracticeLoops.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Irene\\.nuget\\packages\\microsoft.odata.edm\\7.10.0\\microsoft.odata.edm.7.10.0.nupkg.sha512",
+    "C:\\Users\\Irene\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.6.0\\system.runtime.compilerservices.unsafe.4.6.0.nupkg.sha512",
+    "C:\\Users\\Irene\\.nuget\\packages\\system.text.encodings.web\\4.7.2\\system.text.encodings.web.4.7.2.nupkg.sha512",
+    "C:\\Users\\Irene\\.nuget\\packages\\system.text.json\\4.6.0\\system.text.json.4.6.0.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,17 @@
+C:\FullStack\SEP-Full-Stack-Jan-VA\03PracticeLoops\03PracticeLoops\bin\Debug\net6.0\03PracticeLoops.exe
+C:\FullStack\SEP-Full-Stack-Jan-VA\03PracticeLoops\03PracticeLoops\bin\Debug\net6.0\03PracticeLoops.deps.json
+C:\FullStack\SEP-Full-Stack-Jan-VA\03PracticeLoops\03PracticeLoops\bin\Debug\net6.0\03PracticeLoops.runtimeconfig.json
+C:\FullStack\SEP-Full-Stack-Jan-VA\03PracticeLoops\03PracticeLoops\bin\Debug\net6.0\03PracticeLoops.dll
+C:\FullStack\SEP-Full-Stack-Jan-VA\03PracticeLoops\03PracticeLoops\bin\Debug\net6.0\ref\03PracticeLoops.dll
+C:\FullStack\SEP-Full-Stack-Jan-VA\03PracticeLoops\03PracticeLoops\bin\Debug\net6.0\03PracticeLoops.pdb
+C:\FullStack\SEP-Full-Stack-Jan-VA\03PracticeLoops\03PracticeLoops\obj\Debug\net6.0\03PracticeLoops.csproj.AssemblyReference.cache
+C:\FullStack\SEP-Full-Stack-Jan-VA\03PracticeLoops\03PracticeLoops\obj\Debug\net6.0\03PracticeLoops.GeneratedMSBuildEditorConfig.editorconfig
+C:\FullStack\SEP-Full-Stack-Jan-VA\03PracticeLoops\03PracticeLoops\obj\Debug\net6.0\03PracticeLoops.AssemblyInfoInputs.cache
+C:\FullStack\SEP-Full-Stack-Jan-VA\03PracticeLoops\03PracticeLoops\obj\Debug\net6.0\03PracticeLoops.AssemblyInfo.cs
+C:\FullStack\SEP-Full-Stack-Jan-VA\03PracticeLoops\03PracticeLoops\obj\Debug\net6.0\03PracticeLoops.csproj.CoreCompileInputs.cache
+C:\FullStack\SEP-Full-Stack-Jan-VA\03PracticeLoops\03PracticeLoops\obj\Debug\net6.0\03PracticeLoops.dll
+C:\FullStack\SEP-Full-Stack-Jan-VA\03PracticeLoops\03PracticeLoops\obj\Debug\net6.0\ref\03PracticeLoops.dll
+C:\FullStack\SEP-Full-Stack-Jan-VA\03PracticeLoops\03PracticeLoops\obj\Debug\net6.0\03PracticeLoops.pdb
+C:\FullStack\SEP-Full-Stack-Jan-VA\03PracticeLoops\03PracticeLoops\obj\Debug\net6.0\03PracticeLoops.genruntimeconfig.cache
+C:\FullStack\SEP-Full-Stack-Jan-VA\03PracticeLoops\03PracticeLoops\bin\Debug\net6.0\Microsoft.OData.Edm.dll
+C:\FullStack\SEP-Full-Stack-Jan-VA\03PracticeLoops\03PracticeLoops\obj\Debug\net6.0\03PracticeLoops.csproj.CopyComplete
