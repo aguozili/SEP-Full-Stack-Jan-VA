@@ -1,0 +1,15 @@
+C:\FullStack\SEP-Full-Stack-Jan-VA\03ObjectOrientedProgram\03ObjectOrientedProgram\bin\Debug\net6.0\03ObjectOrientedProgram.exe
+C:\FullStack\SEP-Full-Stack-Jan-VA\03ObjectOrientedProgram\03ObjectOrientedProgram\bin\Debug\net6.0\03ObjectOrientedProgram.deps.json
+C:\FullStack\SEP-Full-Stack-Jan-VA\03ObjectOrientedProgram\03ObjectOrientedProgram\bin\Debug\net6.0\03ObjectOrientedProgram.runtimeconfig.json
+C:\FullStack\SEP-Full-Stack-Jan-VA\03ObjectOrientedProgram\03ObjectOrientedProgram\bin\Debug\net6.0\03ObjectOrientedProgram.dll
+C:\FullStack\SEP-Full-Stack-Jan-VA\03ObjectOrientedProgram\03ObjectOrientedProgram\bin\Debug\net6.0\ref\03ObjectOrientedProgram.dll
+C:\FullStack\SEP-Full-Stack-Jan-VA\03ObjectOrientedProgram\03ObjectOrientedProgram\bin\Debug\net6.0\03ObjectOrientedProgram.pdb
+C:\FullStack\SEP-Full-Stack-Jan-VA\03ObjectOrientedProgram\03ObjectOrientedProgram\obj\Debug\net6.0\03ObjectOrientedProgram.csproj.AssemblyReference.cache
+C:\FullStack\SEP-Full-Stack-Jan-VA\03ObjectOrientedProgram\03ObjectOrientedProgram\obj\Debug\net6.0\03ObjectOrientedProgram.GeneratedMSBuildEditorConfig.editorconfig
+C:\FullStack\SEP-Full-Stack-Jan-VA\03ObjectOrientedProgram\03ObjectOrientedProgram\obj\Debug\net6.0\03ObjectOrientedProgram.AssemblyInfoInputs.cache
+C:\FullStack\SEP-Full-Stack-Jan-VA\03ObjectOrientedProgram\03ObjectOrientedProgram\obj\Debug\net6.0\03ObjectOrientedProgram.AssemblyInfo.cs
+C:\FullStack\SEP-Full-Stack-Jan-VA\03ObjectOrientedProgram\03ObjectOrientedProgram\obj\Debug\net6.0\03ObjectOrientedProgram.csproj.CoreCompileInputs.cache
+C:\FullStack\SEP-Full-Stack-Jan-VA\03ObjectOrientedProgram\03ObjectOrientedProgram\obj\Debug\net6.0\03ObjectOrientedProgram.dll
+C:\FullStack\SEP-Full-Stack-Jan-VA\03ObjectOrientedProgram\03ObjectOrientedProgram\obj\Debug\net6.0\ref\03ObjectOrientedProgram.dll
+C:\FullStack\SEP-Full-Stack-Jan-VA\03ObjectOrientedProgram\03ObjectOrientedProgram\obj\Debug\net6.0\03ObjectOrientedProgram.pdb
+C:\FullStack\SEP-Full-Stack-Jan-VA\03ObjectOrientedProgram\03ObjectOrientedProgram\obj\Debug\net6.0\03ObjectOrientedProgram.genruntimeconfig.cache
