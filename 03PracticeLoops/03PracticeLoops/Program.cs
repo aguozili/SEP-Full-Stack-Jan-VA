@@ -1,4 +1,6 @@
-﻿//What will happen if this code executes? 
+﻿
+
+//What will happen if this code executes? 
 
 
 /*
@@ -139,10 +141,12 @@ time = DateTime.Now;
 if (time.Hour < 12)
 {
     Console.WriteLine("Good Morning");
-}else if (time.Hour < 17)
+}
+else if (time.Hour < 17)
 {
     Console.WriteLine("Good Afternoon");
-}else if (time.Hour < 20)
+}
+else if (time.Hour < 20)
 {
     Console.WriteLine("Good Evening");
 }
@@ -166,7 +170,7 @@ Console.WriteLine("------------------------------------------------");
 
 for (int i = 1; i <= 4; i++)
 {
-    for (int j = 0; j <= 24; j= j + i)
+    for (int j = 0; j <= 24; j = j + i)
     {
         Console.Write(j);
         Console.Write(" ");
@@ -174,3 +178,33 @@ for (int i = 1; i <= 4; i++)
     Console.WriteLine("");
 }
 
+
+
+/*
+ * FizzBuzzis a group word game for children to teach them about division. 
+ * Players take turns to count incrementally, replacing any number divisible by three with the word /fizz/, 
+ * any number divisible by five with the word /buzz/, and any number divisible by both with /fizzbuzz/. 
+ * Create a console application in Chapter03 named Exercise03 that outputs a simulated FizzBuzz game counting up to 100. 
+ * The output should look something like the following
+ * 
+ */
+
+void FizzBuzz(int num)
+{
+    if (num % 15 == 0)
+    {
+        Console.WriteLine("fizzbuzz");
+    }else if (num % 3 == 0)
+    {
+        Console.WriteLine("buzz");
+    }else if (num % 5 == 0)
+    {
+        Console.WriteLine("fizz");
+    }
+    else
+    {
+        Console.WriteLine($"{num}");
+    }
+}
+
+FizzBuzz(15);
