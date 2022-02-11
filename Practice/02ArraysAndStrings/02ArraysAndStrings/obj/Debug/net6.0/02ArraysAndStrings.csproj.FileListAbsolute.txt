@@ -1,0 +1,15 @@
+C:\FullStack\SEP-Full-Stack-Jan-VA\Practice\02ArraysAndStrings\02ArraysAndStrings\obj\Debug\net6.0\02ArraysAndStrings.csproj.AssemblyReference.cache
+C:\FullStack\SEP-Full-Stack-Jan-VA\Practice\02ArraysAndStrings\02ArraysAndStrings\obj\Debug\net6.0\02ArraysAndStrings.GeneratedMSBuildEditorConfig.editorconfig
+C:\FullStack\SEP-Full-Stack-Jan-VA\Practice\02ArraysAndStrings\02ArraysAndStrings\obj\Debug\net6.0\02ArraysAndStrings.AssemblyInfoInputs.cache
+C:\FullStack\SEP-Full-Stack-Jan-VA\Practice\02ArraysAndStrings\02ArraysAndStrings\obj\Debug\net6.0\02ArraysAndStrings.AssemblyInfo.cs
+C:\FullStack\SEP-Full-Stack-Jan-VA\Practice\02ArraysAndStrings\02ArraysAndStrings\obj\Debug\net6.0\02ArraysAndStrings.csproj.CoreCompileInputs.cache
+C:\FullStack\SEP-Full-Stack-Jan-VA\Practice\02ArraysAndStrings\02ArraysAndStrings\bin\Debug\net6.0\02ArraysAndStrings.exe
+C:\FullStack\SEP-Full-Stack-Jan-VA\Practice\02ArraysAndStrings\02ArraysAndStrings\bin\Debug\net6.0\02ArraysAndStrings.deps.json
+C:\FullStack\SEP-Full-Stack-Jan-VA\Practice\02ArraysAndStrings\02ArraysAndStrings\bin\Debug\net6.0\02ArraysAndStrings.runtimeconfig.json
+C:\FullStack\SEP-Full-Stack-Jan-VA\Practice\02ArraysAndStrings\02ArraysAndStrings\bin\Debug\net6.0\02ArraysAndStrings.dll
+C:\FullStack\SEP-Full-Stack-Jan-VA\Practice\02ArraysAndStrings\02ArraysAndStrings\bin\Debug\net6.0\ref\02ArraysAndStrings.dll
+C:\FullStack\SEP-Full-Stack-Jan-VA\Practice\02ArraysAndStrings\02ArraysAndStrings\bin\Debug\net6.0\02ArraysAndStrings.pdb
+C:\FullStack\SEP-Full-Stack-Jan-VA\Practice\02ArraysAndStrings\02ArraysAndStrings\obj\Debug\net6.0\02ArraysAndStrings.dll
+C:\FullStack\SEP-Full-Stack-Jan-VA\Practice\02ArraysAndStrings\02ArraysAndStrings\obj\Debug\net6.0\ref\02ArraysAndStrings.dll
+C:\FullStack\SEP-Full-Stack-Jan-VA\Practice\02ArraysAndStrings\02ArraysAndStrings\obj\Debug\net6.0\02ArraysAndStrings.pdb
+C:\FullStack\SEP-Full-Stack-Jan-VA\Practice\02ArraysAndStrings\02ArraysAndStrings\obj\Debug\net6.0\02ArraysAndStrings.genruntimeconfig.cache
