@@ -8,17 +8,8 @@ namespace ColorBall
 {
     public class Ball
     {
-        public Ball(byte red, byte green, byte blue)
-        {
-            BallColor = new Color(red, green, blue);
-        }
 
-        public Ball(byte red, byte green, byte blue, byte alpha)
-        {
-            BallColor = new Color(red, green, blue, alpha);
-        }
-
-        public Color BallColor;
+        public Color BallColor { get; set; }
 
         public int Size { get; set; }
 
@@ -36,10 +27,6 @@ namespace ColorBall
                 ThrowCount++;
             }
         }
-
-
-
-
         
 
     }

@@ -28,9 +28,9 @@ namespace ColorBall
         public byte Alpha { get; set; } 
 
 
-        public void GrayScale()
+        public void GetGrayScale()
         {
-            Console.WriteLine("The grayscale is " + (Red + Green + Blue)/3); 
+            Console.WriteLine("The grayscale is " + Convert.ToByte(Red + Green + Blue)/3); 
         }
 
 

@@ -1,8 +1,10 @@
 ﻿using System;
 using ColorBall;
 
-Ball ball = new Ball(33,44,55,5);
-ball.BallColor.GrayScale();
+Ball ball = new Ball();
+ball.BallColor = new Color(2, 3, 5);
+Console.WriteLine("Alpha: " + ball.BallColor.Alpha);
+ball.BallColor.GetGrayScale();
 ball.Size = 14;
 Console.WriteLine("The size is " + ball.Size);
 ball.Throw();
