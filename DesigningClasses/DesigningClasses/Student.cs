@@ -12,5 +12,7 @@ namespace DesigningClasses
         {
             Console.WriteLine("Doing Assignment.");
         }
+
+        public List<Course> SelectedCourses { get; set; }
     }
 }

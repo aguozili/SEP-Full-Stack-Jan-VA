@@ -8,11 +8,13 @@ namespace DesigningClasses
 {
     public class Instructor: Person
     {
-       public decimal Salary { get; set; }
 
         public override void Performance()
         {
             Console.WriteLine("Teaching.");
         }
+
+        public int DepartmentId { get; set; }
+        public Department Department { get; set; }
     }
 }
