@@ -1,4 +1,5 @@
-﻿
+﻿using System.Collections;
+
 /* 01.
  * Write a program that reads a string from the console, 
  * reverses its letters and prints the result back at the console.
@@ -9,18 +10,37 @@
 
 
 
-String str = Console.ReadLine();
-char[] characters = str.ToCharArray();
-char[] char2 = new char[characters.Length];
+//String str = Console.ReadLine();
+//char[] characters = str.ToCharArray();
+//char[] char2 = new char[characters.Length];
 
-for (int i = 0; i < characters.Length; i++)
+//for (int i = 0; i < characters.Length; i++)
+//{
+//    char2[i] = characters[characters.Length - 1 - i];
+//}
+
+//String str2 = String.Join("", char2);
+
+//Console.WriteLine(str2);
+
+
+
+string ReverseStringOne(String s)
 {
-    char2[i] = characters[characters.Length - 1 - i];
+    char[] charStr = s.ToCharArray();
+
+    for (int i = 0, j = charStr.Length - 1; i < j; i++, j--)
+    {
+        char c = charStr[i];
+        charStr[i] = charStr[j];
+        charStr[j] = c;
+    }
+    string res = new string(charStr);
+    return res;
 }
 
-String str2 = String.Join("", char2);
-
-Console.WriteLine(str2);
+string b = "banana";
+Console.WriteLine(ReverseStringOne(b));
 
 
 
@@ -44,7 +64,6 @@ Console.WriteLine(str2);
 
 
 
-using System.Collections;
 
 String s = "hello, goodbye, hi! auua, exe";
 string[] sentence = s.Split(' ', ',', '!');
@@ -97,22 +116,24 @@ Console.WriteLine(arrlist);
 
 
 String url1 = "http://www.apple.com/iphone";
-string[] url2 = url1.Split(new[] {'/', ':' }, StringSplitOptions.RemoveEmptyEntries);
+string[] url2 = url1.Split(new[] { '/', ':' }, StringSplitOptions.RemoveEmptyEntries);
 
 
 
 
 if (url2.Length == 1)
 {
-    Console.WriteLine("protocol = " );
-    Console.WriteLine("server = "+url2[0]);
+    Console.WriteLine("protocol = ");
+    Console.WriteLine("server = " + url2[0]);
     Console.WriteLine("resource = ");
-}else if (url2.Length == 2)
+}
+else if (url2.Length == 2)
 {
     Console.WriteLine("protocol = ");
     Console.WriteLine("server = " + url2[0]);
     Console.WriteLine("resource = " + url2[1]);
-}else if (url2.Length == 3)
+}
+else if (url2.Length == 3)
 {
     Console.WriteLine("protocol = " + url2[0]);
     Console.WriteLine("server = " + url2[1]);
