@@ -1,0 +1,15 @@
+C:\FullStack\SEP-Full-Stack-Jan-VA\ColorBall\ColorBall\bin\Debug\net6.0\ColorBall.exe
+C:\FullStack\SEP-Full-Stack-Jan-VA\ColorBall\ColorBall\bin\Debug\net6.0\ColorBall.deps.json
+C:\FullStack\SEP-Full-Stack-Jan-VA\ColorBall\ColorBall\bin\Debug\net6.0\ColorBall.runtimeconfig.json
+C:\FullStack\SEP-Full-Stack-Jan-VA\ColorBall\ColorBall\bin\Debug\net6.0\ColorBall.dll
+C:\FullStack\SEP-Full-Stack-Jan-VA\ColorBall\ColorBall\bin\Debug\net6.0\ref\ColorBall.dll
+C:\FullStack\SEP-Full-Stack-Jan-VA\ColorBall\ColorBall\bin\Debug\net6.0\ColorBall.pdb
+C:\FullStack\SEP-Full-Stack-Jan-VA\ColorBall\ColorBall\obj\Debug\net6.0\ColorBall.csproj.AssemblyReference.cache
+C:\FullStack\SEP-Full-Stack-Jan-VA\ColorBall\ColorBall\obj\Debug\net6.0\ColorBall.GeneratedMSBuildEditorConfig.editorconfig
+C:\FullStack\SEP-Full-Stack-Jan-VA\ColorBall\ColorBall\obj\Debug\net6.0\ColorBall.AssemblyInfoInputs.cache
+C:\FullStack\SEP-Full-Stack-Jan-VA\ColorBall\ColorBall\obj\Debug\net6.0\ColorBall.AssemblyInfo.cs
+C:\FullStack\SEP-Full-Stack-Jan-VA\ColorBall\ColorBall\obj\Debug\net6.0\ColorBall.csproj.CoreCompileInputs.cache
+C:\FullStack\SEP-Full-Stack-Jan-VA\ColorBall\ColorBall\obj\Debug\net6.0\ColorBall.dll
+C:\FullStack\SEP-Full-Stack-Jan-VA\ColorBall\ColorBall\obj\Debug\net6.0\ref\ColorBall.dll
+C:\FullStack\SEP-Full-Stack-Jan-VA\ColorBall\ColorBall\obj\Debug\net6.0\ColorBall.pdb
+C:\FullStack\SEP-Full-Stack-Jan-VA\ColorBall\ColorBall\obj\Debug\net6.0\ColorBall.genruntimeconfig.cache

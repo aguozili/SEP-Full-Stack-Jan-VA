@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "b6f29b52-06fd-4fde-b01d-b66871592094": {
+      "ProjectGuid": "b6f29b52-06fd-4fde-b01d-b66871592094",
+      "DisplayName": "ColorBall",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}
