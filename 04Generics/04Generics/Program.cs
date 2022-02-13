@@ -2,6 +2,53 @@
 
 using _04Generics;
 
+/*
+ * 1.Describe the problem generics address.
+ * 
+ * Cannot declare static fields whose types are type parameters.
+ * 
+ * 2.How would you create a list of strings, using the generic List class?
+ * 
+ * List<strign> lstString = new List<string>
+ * 
+ * 3.How many generic type parameters does the Dictionary class have?
+ * 
+ * Dictionary<TKey,TValue> generic type has two type parameters, TKey and TValue , that represent the types of its keys and values.
+ * 
+ * 4.True/False. When a generic class has multiple type parameters, they must all match.
+ * 
+ * True
+ * 
+ * 5.What method is used to add items to a List object?
+ * 
+ * list.add()
+ * 
+ * 6.Name two methods that cause items to be removed from a List.
+ * 
+ * remove(item)
+ * removeat(index)
+ * 
+ * 7.How do you indicate that a class has a generic type parameter?
+ * 
+ * a <T> has to come after the class name
+ * 
+ * 8.True/False. Generic classes can only have one generic type parameter.
+ * 
+ * False
+ * 
+ * 9.True/False. Generic type constraints limit what can be used for the generic type.
+ * 
+ * True
+ * 
+ * 10.True/False. Constraints let you use the methods of the thing you are constraining to.
+ * 
+ * True
+ * 
+ */
+
+
+
+
 
 /*
  * Create a custom Stack class  MyStack<T> that can be used with any data type which has following methods
