@@ -1,0 +1,28 @@
+.navbar {
+    background-color: rgb(241, 187, 223);
+}
+.navbar a:link{
+    color: whitesmoke;
+}
+
+.navbar a:link{
+    color: greenyellow;
+}
+
+.navbar ul{
+    list-style-type: none;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.navbar ul li a{
+    text-decoration: none;
+}
+
+.navbar li{
+    display: inline;
+    text-transform: uppercase;
+    padding-left: 10px;
+
+}
+
