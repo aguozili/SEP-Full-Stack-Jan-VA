@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using ApplicationCore.Entities;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,16 @@ namespace Infrastructure.Data
 {
     public class MovieShopDbContext: DbContext
     {
+        // inject the dbcontext options
+        public MovieShopDbContext(DbContextOptions<MovieShopDbContext> options) : base(options)
+        {
 
+        }
+
+
+
+        //Create Dbset property inside the DbContext t
+        public DbSet<Genre> Genres { get; set; }
     
     }
 }
