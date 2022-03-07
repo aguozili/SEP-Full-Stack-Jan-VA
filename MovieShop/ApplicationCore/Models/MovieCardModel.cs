@@ -8,5 +8,13 @@ namespace ApplicationCore.Models
 {
     public class MovieCardModel
     {
+        //model based on view requirement
+        // id, url
+
+        public int Id { get; set; }
+        public string Title { get; set; }
+        public string PosterUrl { get; set; }
+
+
     }
 }

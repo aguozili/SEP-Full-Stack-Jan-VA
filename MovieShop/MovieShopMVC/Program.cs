@@ -1,7 +1,13 @@
+using ApplicationCore.Contracts.Services;
+using Infrastructure.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+        //inject MovieService Class that implement IMovieService Interface
+        //easy to inject new implementation: lbuilder.Services.AddScoped<IMovieService, NewClass>();
+builder.Services.AddScoped<IMovieService, MovieService>();
 
 var app = builder.Build();
 
@@ -21,6 +27,8 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapControllerRoute(
+
+    // default
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 

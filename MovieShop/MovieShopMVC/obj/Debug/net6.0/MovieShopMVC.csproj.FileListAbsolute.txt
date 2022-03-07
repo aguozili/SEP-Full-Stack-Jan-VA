@@ -24,3 +24,8 @@ C:\FullStack\SEP-Full-Stack-Jan-VA\MovieShop\MovieShopMVC\obj\Debug\net6.0\Movie
 C:\FullStack\SEP-Full-Stack-Jan-VA\MovieShop\MovieShopMVC\obj\Debug\net6.0\ref\MovieShopMVC.dll
 C:\FullStack\SEP-Full-Stack-Jan-VA\MovieShop\MovieShopMVC\obj\Debug\net6.0\MovieShopMVC.pdb
 C:\FullStack\SEP-Full-Stack-Jan-VA\MovieShop\MovieShopMVC\obj\Debug\net6.0\MovieShopMVC.genruntimeconfig.cache
+C:\FullStack\SEP-Full-Stack-Jan-VA\MovieShop\MovieShopMVC\bin\Debug\net6.0\ApplicationCore.dll
+C:\FullStack\SEP-Full-Stack-Jan-VA\MovieShop\MovieShopMVC\bin\Debug\net6.0\Infrastructure.dll
+C:\FullStack\SEP-Full-Stack-Jan-VA\MovieShop\MovieShopMVC\bin\Debug\net6.0\ApplicationCore.pdb
+C:\FullStack\SEP-Full-Stack-Jan-VA\MovieShop\MovieShopMVC\bin\Debug\net6.0\Infrastructure.pdb
+C:\FullStack\SEP-Full-Stack-Jan-VA\MovieShop\MovieShopMVC\obj\Debug\net6.0\MovieShopMVC.csproj.CopyComplete
