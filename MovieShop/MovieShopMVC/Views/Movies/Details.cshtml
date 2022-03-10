@@ -1,0 +1,68 @@
+﻿@model ApplicationCore.Models.MovieDetailsModel
+
+<div class="row">
+    <div class="col-2">
+        <img src="@Model.PosterUrl" alt="@Model.Title" style="width:90%">
+    </div>
+
+     <div class="col-md-4 offset-md-3">
+        <h3>@Model.Title</h3>
+        @Model.Overview
+    </div>
+
+    <div class="col-1 offset-md-1">
+        <h2>bottoms</h2>
+    </div>
+</div>
+
+<div class ="row">
+
+    <div class="col-4">
+        <h5> MOVIE FACTS</h5>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+              Release Date: 
+              <span class="badge bg-secondary">@Model.ReleaseDate</span>
+          </li>
+
+          <li class="list-group-item">
+              RunTime:
+              <span class="badge bg-secondary">@Model.RunTime</span>
+          </li>
+
+          <li class="list-group-item">
+              Box Office:
+              <span class="badge bg-secondary">$@Model.Revenue</span>
+          </li>
+
+          <li class="list-group-item">
+              Budget:
+              <span class="badge bg-secondary">$@Model.Budget</span>
+          </li>
+
+        </ul>
+    </div>
+
+    <div class="col-5 offset-md-1">
+        <h5> CAST</h5>
+        <ul class="list-group list-group-flush">
+
+        @foreach (var cast in @Model.Casts)
+            {
+                <li class="list-group-item">
+
+                    
+                    <img src="@cast.ProfilePath" alt="@cast.Name" class="rounded-circle" style="width:5%">
+                    
+                    @cast.Name, 
+
+                    @cast.Character
+                    
+                </li>
+            }
+        </ul>
+    </div>
+
+
+
+</div>

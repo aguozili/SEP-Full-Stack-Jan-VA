@@ -20,7 +20,7 @@ namespace MovieShopMVC.Controllers
 
 
         [HttpGet]
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
             //No model
             //---------
@@ -28,7 +28,7 @@ namespace MovieShopMVC.Controllers
             //var movieService = new MovieService();
 
             //Model data
-            var movies = _movieService.GetTop30GrossingMovies();
+            var movies =await _movieService.GetTop30GrossingMovies();
 
             return View(movies);
         }

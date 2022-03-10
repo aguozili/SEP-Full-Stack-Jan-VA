@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Infrastructure.Repositories
 {
-    public interface CastRepository
+    public class GenreRepository
     {
     }
 }
