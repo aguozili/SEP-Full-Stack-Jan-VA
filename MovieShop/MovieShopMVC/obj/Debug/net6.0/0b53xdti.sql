@@ -563,5 +563,3 @@ GO
 COMMIT;
 GO
 
-
-
