@@ -1,6 +1,6 @@
 ﻿@model ApplicationCore.Models.MovieDetailsModel
 
-<div class="row">
+<div class="row" style="background-color:grey" >
     <div class="col-2">
         <img src="@Model.PosterUrl" alt="@Model.Title" style="width:90%">
     </div>
@@ -14,7 +14,7 @@
 
         <div class="span2">
             <p><button class="btn btn-primary btn-block">Review</button></p>
-            <p><button class="btn btn-success btn-block">@Model.Price</button></p>
+            <p><button class="btn btn-success btn-block">BUY @Model.Price</button></p>
         </div>
     </div>
 </div>
