@@ -43,24 +43,31 @@
         </ul>
     </div>
 
-    <div class="col-5 offset-md-1">
+    <div class="col-7 offset-md-1">
         <h5> CAST</h5>
         <ul class="list-group list-group-flush">
 
         @foreach (var cast in @Model.Casts)
             {
                 <li class="list-group-item">
-
-                    
-                    <img src="@cast.ProfilePath" alt="@cast.Name" class="rounded-circle" style="width:5%">
-                    
-                    @cast.Name, 
-
-                    @cast.Character
-                    
+                    <div class = "row">
+                       <div class = "col-1">
+                           <img src="@cast.ProfilePath" alt="@cast.Name" class="rounded-circle" style="width:23%">
+                       </div>
+                       <div class = "col-4">
+                           @cast.Name
+                       </div>
+                       <div class = "col-5">
+                           @cast.Character
+                       </div>
+                    </div>
                 </li>
             }
         </ul>
+
+
+         
+        
     </div>
 
 

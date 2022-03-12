@@ -35,6 +35,8 @@ namespace Infrastructure.Data
         public DbSet<Favorite> Favorites { get; set; }
         public DbSet<Purchase> Purchases { get; set; }
 
+        public DbSet<MovieCrew> MovieCrews { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Movie>(ConfigureMovie);
@@ -49,8 +51,21 @@ namespace Infrastructure.Data
             modelBuilder.Entity<Review>(ConfigureReview);
             modelBuilder.Entity<Favorite>(ConfigureFavorites);
             modelBuilder.Entity<Purchase>(ConfigurePurchase);
+            modelBuilder.Entity<MovieCrew>(ConfigureMovieCrew);
 
         }
+
+        private void ConfigureMovieCrew(EntityTypeBuilder<MovieCrew> builder)
+        {
+            builder.ToTable("MovieCrew");
+            builder.HasKey(mc => new { mc.MovieId, mc.CrewId, mc.Department, mc.Job });
+            builder.Property(mc => mc.Department).HasMaxLength(128);
+            builder.Property(mc => mc.Job).HasMaxLength(128);
+            builder.HasOne(mc => mc.Movie).WithMany(mc => mc.MovieCrew).HasForeignKey(mc => mc.MovieId);
+            builder.HasOne(mc => mc.Crew).WithMany(mc => mc.MovieCrew).HasForeignKey(mc => mc.CrewId);
+
+        }
+
         private void ConfigurePurchase(EntityTypeBuilder<Purchase> builder)
         {
             builder.ToTable("Purchase");
