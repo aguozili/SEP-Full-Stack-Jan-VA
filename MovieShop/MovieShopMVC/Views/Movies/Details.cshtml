@@ -11,7 +11,8 @@
     </div>
 
     <div class="col-1 offset-md-1">
-        <h2>bottoms</h2>
+        <button type="button" class="btn btn-primary btn-lg">Review</button><p>
+        <button type="button" class="btn btn-secondary btn-lg">BUY @Model.Price</button>
     </div>
 </div>
 
@@ -41,6 +42,10 @@
           </li>
 
         </ul>
+
+        <h5>TRAILERS</h5>
+        <a href="@Model.Trailers">Trailer</a>
+
     </div>
 
     <div class="col-7 offset-md-1">
@@ -52,7 +57,7 @@
                 <li class="list-group-item">
                     <div class = "row">
                        <div class = "col-1">
-                           <img src="@cast.ProfilePath" alt="@cast.Name" class="rounded-circle" style="width:60%">
+                           <img src="@cast.ProfilePath" alt="@cast.Name" class="rounded-circle" style="width:70%">
                        </div>
                        <div class = "col-4">
                            @cast.Name
