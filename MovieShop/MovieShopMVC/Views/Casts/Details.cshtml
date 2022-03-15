@@ -1,3 +1,21 @@
 ﻿@model ApplicationCore.Models.CastDetailsModel
 
-<h1> @Model.Id</h1>
+<h1> @Model.Name</h1>
+
+
+
+<div class="rounded">
+    <div class="container-fluid">
+        <div class="row">
+            @foreach (var movie in @Model.Movies){
+                <div class="col-6 col-xl-2 col-sm-4 col-lg-3 ">
+                     <div class="card mb-4">
+                                   <a asp-action="Details" asp-controller="Movies" asp-route-id="@Model.Id">
+                                       <img src="@movie.PosterUrl" alt="@movie.Title" class="img-fluid">
+                                   </a>
+                     </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
