@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using ApplicationCore.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace MovieShopMVC.Controllers
 {
@@ -14,7 +15,7 @@ namespace MovieShopMVC.Controllers
 
         //send the data back
         [HttpPost]
-        public  async Task<IActionResult> Register()
+        public  async Task<IActionResult> Register(RegisterModel model)
         {
             return View();
         }

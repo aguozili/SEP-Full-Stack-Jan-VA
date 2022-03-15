@@ -15,6 +15,7 @@ namespace MovieShopMVC.Controllers
         {
             //cast service with details
             //pass the cast detail data to view
+
             var castDetails = await _castService.GetCastDetails(id);
             return View(castDetails);
         }
