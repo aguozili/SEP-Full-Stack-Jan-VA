@@ -5,6 +5,7 @@
         <img src="@Model.PosterUrl" alt="@Model.Title" style="width:90%">
     </div>
 
+
      <div class="col-md-4 offset-md-3">
         <h3>@Model.Title</h3>
         @Model.Overview
@@ -60,7 +61,11 @@
                 <li class="list-group-item">
                     <div class = "row">
                        <div class = "col-1">
+                           
+                           <a asp-action="Details" asp-controller="Casts" asp-route-id="@cast.Id">
                            <img src="@cast.ProfilePath" alt="@cast.Name" class="rounded-circle" style="width:70%">
+                           </a>
+
                        </div>
                        <div class = "col-4">
                            @cast.Name
