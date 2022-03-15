@@ -12,8 +12,9 @@ namespace Infrastructure.Services
     {
         public Task<bool> CreateUser(RegisterModel model)
         {
-            //registration process
+           //registration process
 
+            throw new NotImplementedException();
         }
 
         public Task<bool> ValidateUser(string email, string password)
