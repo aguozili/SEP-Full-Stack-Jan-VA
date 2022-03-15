@@ -17,6 +17,8 @@ namespace MovieShopMVC.Controllers
         [HttpPost]
         public  async Task<IActionResult> Register(RegisterModel model)
         {
+
+            // save the password and account with salt!
             return View();
         }
     }
