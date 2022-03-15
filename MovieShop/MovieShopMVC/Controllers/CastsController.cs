@@ -5,7 +5,7 @@ namespace MovieShopMVC.Controllers
 {
     public class CastsController: Controller
     {
-        private readonly ICastService _castService;
+        private ICastService _castService;
         public CastsController(ICastService castService)
         {
             _castService = castService;

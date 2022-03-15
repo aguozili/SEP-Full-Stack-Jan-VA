@@ -13,6 +13,10 @@ builder.Services.AddControllersWithViews();
         //easy to inject new implementation: lbuilder.Services.AddScoped<IMovieService, NewClass>();
 builder.Services.AddScoped<IMovieService, MovieService>();
 builder.Services.AddScoped<IMovieRepository, MovieRepository>();
+builder.Services.AddScoped<ICastRepository, CastRepository>();
+builder.Services.AddScoped<ICastService, CastService>();
+
+
 
 //inject the connection string to our Dbcontext by reading from appsetting.json file
 builder.Services.AddDbContext<MovieShopDbContext>(options =>
