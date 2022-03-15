@@ -58,9 +58,21 @@ namespace Infrastructure.Services
 
         }
 
-        public Task<bool> ValidateUser(string email, string password)
+        public async Task<bool> ValidateUser(string email, string password)
         {
-            throw new NotImplementedException();
+            var user = await _userRepository.GetUserByEmail(email);
+            if (user == null)
+            {
+                throw new Exception("username and password in valud");
+            }
+
+            var hashedPassword = GetHashedPassword(password, user.Salt);
+            if (hashedPassword == user.HashedPassword)
+            {
+                return true;
+            }
+
+            return false;
         }
 
         private string GetRandomSalt()

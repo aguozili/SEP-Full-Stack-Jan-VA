@@ -30,9 +30,25 @@ namespace MovieShopMVC.Controllers
             return RedirectToAction("Login");
         }
 
+
+        [HttpGet]
         public IActionResult Login()
         {
             return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Login(LoginModel model)
+        {
+            var userLogedIn = await _accountService.ValidateUser(model.Email, model.Password);
+            if (userLogedIn)
+            {
+                return LocalRedirect("~/");
+            }
+            else
+            {
+                return View();
+            }
         }
     }
 }
