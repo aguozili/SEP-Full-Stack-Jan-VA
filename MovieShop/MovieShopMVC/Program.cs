@@ -19,6 +19,9 @@ builder.Services.AddScoped<ICastService, CastService>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IAccountService, AccountService>();
 
+//
+builder.Services.AddHttpContextAccessor();
+
 
 
 //inject the connection string to our Dbcontext by reading from appsetting.json file

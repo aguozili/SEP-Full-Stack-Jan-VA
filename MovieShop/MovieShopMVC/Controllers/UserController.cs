@@ -1,10 +1,18 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using MovieShopMVC.Services;
 using System.Security.Claims;
 
 namespace MovieShopMVC.Controllers
 {
     public class UserController : Controller
     {
+        private readonly ICurrentUser _currentUser;
+
+        public UserController(ICurrentUser currentUser)
+        {
+            _currentUser = currentUser;
+        }
+
         [HttpGet]
         public async Task<IActionResult> Purchases()
         {
@@ -15,14 +23,20 @@ namespace MovieShopMVC.Controllers
 
 
             //cookie based authentication (browser)
-            var isAuthenticated = HttpContext.User.Identity.IsAuthenticated;
-            if (isAuthenticated)
+            //var isAuthenticated = HttpContext.User.Identity.IsAuthenticated;
+            //if (isAuthenticated)
+            //{
+            //    //get the user id from cookies/claims
+            //    var userId =Convert.ToInt32( HttpContext.User.FindFirst(ClaimTypes.NameIdentifier).Value);
+
+            //    //send this userid to userservice and get the movies user purchased from puchase table
+
+            //}
+
+            var userAuth = _currentUser.isAuthenticated;
+            if (userAuth)
             {
-                //get the user id from cookies/claims
-                var userId =Convert.ToInt32( HttpContext.User.FindFirst(ClaimTypes.NameIdentifier).Value);
-
-                //send this userid to userservice and get the movies user purchased from puchase table
-
+                var userId = _currentUser.UserId;
             }
 
             return View();
