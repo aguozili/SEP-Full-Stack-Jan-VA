@@ -50,7 +50,13 @@
         </ul>
 
         <h5>TRAILERS</h5>
-        <a href="@Model.Trailers">Trailer</a>
+        @foreach( var trailer in @Model.Trailers)
+        {
+            <a href="@trailer.TrailerUrl">@trailer.Name</a>
+
+        }
+
+        
 
     </div>
 
