@@ -1,19 +1,25 @@
 ﻿@model ApplicationCore.Models.MovieDetailsModel
 
 <div class="row mt-2">
-    <div class="col-2">
+    <div class="col-4">
         <img src="@Model.PosterUrl" alt="@Model.Title" style="width:90%">
     </div>
 
 
-     <div class="col-md-4 offset-md-3">
+     <div class="col-md-5">
         <h3>@Model.Title</h3>
-        @Model.Tagline
+        <p>@Model.Tagline</p>
+
+        @foreach(var genre in @Model.Genres)
+        {
+            <span class="badge bg-secondary">@genre.Name</span>
+        }
+
         <p><button class="btn btn-primary btn-block">Favorite</button></p>
         @Model.Overview
     </div>
 
-    <div class="col-2 offset-md-1">
+    <div class="col-3">
 
         <div class="span2">
             <p><button class="btn btn-primary btn-block">Review</button></p>
@@ -22,7 +28,7 @@
     </div>
 </div>
 
-<div class ="row mt-2">
+<div class ="row mt-5">
 
     <div class="col-4">
         <h5> MOVIE FACTS</h5>
@@ -52,7 +58,7 @@
         <h5>TRAILERS</h5>
         @foreach( var trailer in @Model.Trailers)
         {
-            <a href="@trailer.TrailerUrl">@trailer.Name</a>
+            <p><a href="@trailer.TrailerUrl">@trailer.Name</a></p>
 
         }
 
