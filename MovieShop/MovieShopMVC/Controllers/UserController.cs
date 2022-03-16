@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using ApplicationCore.Contracts.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using MovieShopMVC.Services;
 using System.Security.Claims;
@@ -9,11 +10,13 @@ namespace MovieShopMVC.Controllers
     public class UserController : Controller
     {
         private readonly ICurrentUser _currentUser;
+        private readonly IUserService _userService;
 
         
-        public UserController(ICurrentUser currentUser)
+        public UserController(ICurrentUser currentUser, IUserService userService)
         {
             _currentUser = currentUser;
+            _userService = userService;
         }
 
         [HttpGet]
@@ -21,13 +24,16 @@ namespace MovieShopMVC.Controllers
         {
 
             var userId = _currentUser.UserId;
-            return View();
+            var purchaseDetails = await _userService.GetAllPurchasesForUser(userId);
+            return View(purchaseDetails);
         }
 
         [HttpGet]
         public async Task<IActionResult> Favorites()
         {
-            return View();
+            var userId = _currentUser.UserId;
+            var favoriteList = await _userService.GetAllFavoritesForUser(userId);
+            return View(favoriteList);
         }
 
         [HttpGet]
