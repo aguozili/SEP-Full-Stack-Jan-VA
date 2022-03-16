@@ -42,6 +42,8 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+// before the authorization middleware
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(
