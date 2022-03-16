@@ -11,10 +11,9 @@ namespace ApplicationCore.Models
         public int UserId { get; set; }
         public int MovieID { get; set; }
         public string Title { get; set; }
-        public int PosterUrl { get; set; }
         public DateTime PurchasedDate { get; set; }
         public decimal Price { get; set; }
-        public int PurchaseNumber { get; set; }
+        public Guid PurchaseNumber { get; set; }
 
     }
 }

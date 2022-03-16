@@ -1,5 +1,6 @@
 ﻿using ApplicationCore.Contracts.Repositories;
 using ApplicationCore.Contracts.Services;
+using ApplicationCore.Entities;
 using ApplicationCore.Models;
 using System;
 using System.Collections.Generic;
@@ -126,9 +127,21 @@ namespace Infrastructure.Services
             throw new NotImplementedException();
         }
 
-        public Task<int> PurchaseMovie(PurchaseRequestModel model, int id)
+        public async Task<int> PurchaseMovie(PurchaseRequestModel model, int id)
         {
-            throw new NotImplementedException();
+            var user = await _userRepository.GetById(id);
+
+            var purchase = new Purchase
+            {
+                UserId = model.UserId,
+                MovieId = model.MovieID,
+                TotalPrice = model.Price,
+                PurchaseDateTime = model.PurchasedDate,
+                PurchaseNumber = model.PurchaseNumber
+            };
+
+            var makepurhcase = await _userRepository.Add(user);
+            return makepurhcase.Id;
         }
 
         public Task<int> RemoveFavorite(FavoriteRequestModel model)
