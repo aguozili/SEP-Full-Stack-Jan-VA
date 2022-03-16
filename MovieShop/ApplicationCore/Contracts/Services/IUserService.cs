@@ -27,7 +27,7 @@ namespace ApplicationCore.Contracts.Services
 
         //Purchase
         Task<UserPurchaseModel> GetAllPurchasesForUser(int id);
-        Task<int> PurchaseMovie(PurchaseRequestModel model);
+        Task<int> PurchaseMovie(PurchaseRequestModel model, int id);
         Task<PurchaseDetailsModel> GetPurchasesDetails(int userId, int movieId);
 
         Task<bool> IsMoviePurchased(PurchaseRequestModel model, int id);

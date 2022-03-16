@@ -126,7 +126,7 @@ namespace Infrastructure.Services
             throw new NotImplementedException();
         }
 
-        public Task<int> PurchaseMovie(PurchaseRequestModel model)
+        public Task<int> PurchaseMovie(PurchaseRequestModel model, int id)
         {
             throw new NotImplementedException();
         }

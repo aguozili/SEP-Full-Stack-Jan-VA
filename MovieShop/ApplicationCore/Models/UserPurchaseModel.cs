@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ApplicationCore.Models
 {
-    public class PurchaseDetailsModel
+    public class UserPurchaseModel
     {
         public int UserId { get; set; }
         

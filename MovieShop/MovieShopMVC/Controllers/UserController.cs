@@ -1,4 +1,5 @@
 ﻿using ApplicationCore.Contracts.Services;
+using ApplicationCore.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using MovieShopMVC.Services;
@@ -42,9 +43,11 @@ namespace MovieShopMVC.Controllers
             return View();
         }
 
-        [HttpGet]
-        public async Task<IActionResult> BuyMovie()
+        [HttpPost]
+        public async Task<IActionResult> BuyMovie(PurchaseRequestModel purchaseRequest)
         {
+            var userId = _currentUser.UserId;
+            var purchase = await _userService.PurchaseMovie(purchaseRequest, userId);
             return View();
         }
         [HttpGet]
