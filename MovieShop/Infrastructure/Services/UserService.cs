@@ -18,6 +18,26 @@ namespace Infrastructure.Services
             _userRepository = userRepository;
         }
 
+        public Task<int> AddFavorite(FavoriteRequestModel model)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<int> AddMovieReview(ReviewRequestModel model)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<int> DeleteMovieReview(ReviewRequestModel model)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<int> FavoriteExists(int userId, int movieId)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<FavoriteListModel> GetAllFavoritesForUser(int id)
         {
             var user = await _userRepository.GetById(id);
@@ -41,10 +61,10 @@ namespace Infrastructure.Services
             return favoriteList;
         }
 
-        public async Task<PurchaseDetailsModel> GetAllPurchasesForUser(int id)
+        public async Task<UserPurchaseModel> GetAllPurchasesForUser(int id)
         {
             var user = await _userRepository.GetById(id);
-            var puchaseDetails = new PurchaseDetailsModel
+            var puchaseDetails = new UserPurchaseModel
             {
                 UserId = user.Id
             };
@@ -69,6 +89,56 @@ namespace Infrastructure.Services
             
 
             return puchaseDetails;
+        }
+
+        public async Task<UserReviewModel> GetAllReviewsByUser(int id)
+        {
+            var user = await _userRepository.GetById(id);
+            var reviewList = new UserReviewModel
+            {
+                Id = user.Id
+            };
+
+            reviewList.Reviews = new List<ReviewModel>();
+            foreach (var review in user.Reviews)
+            {
+                reviewList.Reviews.Add(new ReviewModel
+                {
+                    MovieId = review.MovieId,
+                    UserId = review.UserId,
+                    MovieTitle = review.Movie.Title,
+                    ReviewText = review.ReviewText,
+                    Rating = review.Rating,
+                    PosterUrl = review.Movie.PosterUrl
+                });
+            };
+
+            return reviewList;
+        }
+
+        public Task<PurchaseDetailsModel> GetPurchasesDetails(int userId, int movieId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<bool> IsMoviePurchased(PurchaseRequestModel model, int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<int> PurchaseMovie(PurchaseRequestModel model)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<int> RemoveFavorite(FavoriteRequestModel model)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<int> UpdateMovieReview(ReviewRequestModel model)
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace ApplicationCore.Models
 {
-    public class PurchaseDetailsModel
+    public class UserReviewModel
     {
+        public int Id { get; set; }
+        public List<ReviewModel> Reviews { get; set; }
     }
 }
