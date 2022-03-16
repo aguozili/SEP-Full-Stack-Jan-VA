@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace MovieShopMVC.Controllers
 {
@@ -14,6 +15,16 @@ namespace MovieShopMVC.Controllers
 
 
             //cookie based authentication (browser)
+            var isAuthenticated = HttpContext.User.Identity.IsAuthenticated;
+            if (isAuthenticated)
+            {
+                //get the user id from cookies/claims
+                var userId =Convert.ToInt32( HttpContext.User.FindFirst(ClaimTypes.NameIdentifier).Value);
+
+                //send this userid to userservice and get the movies user purchased from puchase table
+
+            }
+
             return View();
         }
 
