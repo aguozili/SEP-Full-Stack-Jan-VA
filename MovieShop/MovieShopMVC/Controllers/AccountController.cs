@@ -70,7 +70,8 @@ namespace MovieShopMVC.Controllers
                 //create the cookie
                 //SignInAsync
 
-                await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal);
+                await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, 
+                    new ClaimsPrincipal (claimsIdentity));
 
 
                 return LocalRedirect("~/");
