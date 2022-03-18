@@ -61,6 +61,9 @@ namespace MovieShopMVC.Controllers
             var purchase = await _userService.PurchaseMovie(purchaseModel, userId);
             return RedirectToAction("Purchases");
         }
+
+
+
         [HttpGet]
         public async Task<IActionResult> FavoriteMovies()
         {

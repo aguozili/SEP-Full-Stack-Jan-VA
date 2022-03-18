@@ -11,6 +11,8 @@ namespace MovieShopMVC.Controllers
             _castService = castService;
         }
 
+
+        [HttpGet]
         public async Task<IActionResult> Details(int id)
         {
             //cast service with details
