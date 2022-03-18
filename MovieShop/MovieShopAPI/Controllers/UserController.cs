@@ -1,5 +1,6 @@
 ﻿using ApplicationCore.Contracts.Services;
 using ApplicationCore.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MovieShopAPI.Services;
@@ -8,6 +9,7 @@ namespace MovieShopAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class UserController : ControllerBase
     {
         private  ICurrentUser _currentUser;
@@ -23,25 +25,27 @@ namespace MovieShopAPI.Controllers
         }
 
 
-        [Route("purchase")]
+        [Route("purchases")]
         [HttpGet]
-        public async Task<IActionResult> GetPurchases()
+        public async Task<IActionResult> Purchases()
         {
 
-            var userId = _currentUser.UserId;
-            var purchaseDetails = await _userService.GetAllPurchasesForUser(userId);
-            if(purchaseDetails == null)
-            {
-                return NotFound();
-            }
-            return Ok(purchaseDetails);
+            //var userId = _currentUser.UserId;
+            //var purchaseDetails = await _userService.GetAllPurchasesForUser(userId);
+            //if(purchaseDetails == null)
+            //{
+            //    return NotFound();
+            //}
+            //return Ok(purchaseDetails);
+
+            return Ok();
             
         }
 
 
         [Route("favorite")]
         [HttpGet]
-        public async Task<IActionResult> GetFavorites()
+        public async Task<IActionResult> Favorites()
         {
             var userId = _currentUser.UserId;
             var favoriteList = await _userService.GetAllFavoritesForUser(userId);

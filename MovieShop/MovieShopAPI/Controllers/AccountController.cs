@@ -79,6 +79,16 @@ namespace MovieShopAPI.Controllers
                 new("language", "en")
             };
 
+            //add any role claims to the above claims
+
+            claims.AddRange(user.Roles.Select(role => new Claim(ClaimTypes.Role, role.Name)));
+
+            //check if user has any roles
+            //if (user.Roles.Any())
+            //{
+                
+            //}
+
 
             var identityClaims = new ClaimsIdentity();
             identityClaims.AddClaims(claims);
