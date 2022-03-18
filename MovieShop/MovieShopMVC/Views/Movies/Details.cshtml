@@ -30,31 +30,46 @@
             <p><button class="btn btn-primary btn-block">Review</button></p>
             <!--Buy-->
 
+            @if (@ViewBag.MoviePurchsed == true)
+            {
+                <button class="btn btn-primary btn-block">Watch Movie</button>
+            }else{
+
             <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#buyModal">
               BUY @Model.Price
             </button>
 
+            <form asp-controller="User" asp-action="BuyMovie" method ="post">
+
             <!-- Modal -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade" id="buyModal" tabindex="-1" role="dialog" aria-labelledby="buymodallabel" aria-hidden="true">
               <div class="modal-dialog" role="document">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Purchase Movie: @Model.Title</h5>
+                    <input type ="hidden" value = @Model.Id name="MovieId"></input>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                     </button>
                   </div>
                   <div class="modal-body">
-                    ...
+                    Movie Price is @Model.Price .Purchase?
                   </div>
                   <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+
+                    <!--Purchase button-->
+                    <input type="submit" value = "Purchase Movie" class="btn btn-primary"></input>
+
                   </div>
                 </div>
               </div>
             </div>
+            </form>
+
+            }
 
 
 

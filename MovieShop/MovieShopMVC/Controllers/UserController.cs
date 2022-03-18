@@ -12,12 +12,14 @@ namespace MovieShopMVC.Controllers
     {
         private readonly ICurrentUser _currentUser;
         private readonly IUserService _userService;
+        private readonly IMovieService _movieService;
 
-        
-        public UserController(ICurrentUser currentUser, IUserService userService)
+
+        public UserController(ICurrentUser currentUser, IUserService userService, IMovieService movieService = null)
         {
             _currentUser = currentUser;
             _userService = userService;
+            _movieService = movieService;
         }
 
         [HttpGet]
@@ -44,11 +46,20 @@ namespace MovieShopMVC.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> BuyMovie(PurchaseRequestModel purchaseRequestModel)
+        public async Task<IActionResult> BuyMovie(int movieId)
         {
             var userId = _currentUser.UserId;
-            var purchase = await _userService.PurchaseMovie(purchaseRequestModel, userId);
-            return View();
+            var movieprice = await _movieService.GetMoviePrice(movieId);
+            var purchaseModel = new PurchaseRequestModel
+            {
+                MovieID = movieId,
+                UserId = userId,
+                PurchaseNumber = Guid.NewGuid(),
+                PurchasedDate = DateTime.Now,
+                Price = movieprice
+            };
+            var purchase = await _userService.PurchaseMovie(purchaseModel, userId);
+            return RedirectToAction("Purchases");
         }
         [HttpGet]
         public async Task<IActionResult> FavoriteMovies()

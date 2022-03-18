@@ -30,7 +30,7 @@ namespace ApplicationCore.Contracts.Services
         Task<int> PurchaseMovie(PurchaseRequestModel model, int id);
         Task<PurchaseDetailsModel> GetPurchasesDetails(int userId, int movieId);
 
-        Task<bool> IsMoviePurchased(PurchaseRequestModel model, int id);
+        //Task<bool> IsMoviePurchased(int id);
 
     }
 }

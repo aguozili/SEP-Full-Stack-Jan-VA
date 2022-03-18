@@ -13,10 +13,12 @@ namespace Infrastructure.Services
     public class UserService: IUserService
     {
         private readonly IUserRepository _userRepository;
+        private readonly IPurchaseRepository _purchaseRepository;
 
-        public UserService(IUserRepository userRepository)
+        public UserService(IUserRepository userRepository, IPurchaseRepository purchaseRepository)
         {
             _userRepository = userRepository;
+            _purchaseRepository = purchaseRepository;
         }
 
         public Task<int> AddFavorite(FavoriteRequestModel model)
@@ -122,10 +124,10 @@ namespace Infrastructure.Services
             throw new NotImplementedException();
         }
 
-        public Task<bool> IsMoviePurchased(PurchaseRequestModel model, int id)
-        {
-            throw new NotImplementedException();
-        }
+        //public Task<bool> IsMoviePurchased(int userid)
+        //{
+        //    return _purchaseRepository.IsMoviePurchased(userid);
+        //}
 
         public async Task<int> PurchaseMovie(PurchaseRequestModel model, int id)
         {
@@ -140,7 +142,7 @@ namespace Infrastructure.Services
                 PurchaseNumber = model.PurchaseNumber
             };
 
-            var makepurhcase = await _userRepository.Add(user);
+            var makepurhcase = await _purchaseRepository.Add(purchase);
             return makepurhcase.Id;
         }
 
